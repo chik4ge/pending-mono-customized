@@ -181,7 +181,7 @@ def extract_zip(zip_path: Path, destination: Path) -> None:
         archive.extractall(destination)
 
 
-def iter_font_files(root: Path, pattern: str) -> list[Path]:
+def iter_font_files(root: Path) -> list[Path]:
     fonts = sorted(path for path in root.rglob('*.ttf') if path.is_file())
     if not fonts:
         raise SystemExit(f'No TTF fonts found under {root}')
@@ -284,7 +284,7 @@ def main() -> int:
 
     extract_root = cache_dir / 'extracted' / release['tag_name'] / asset['name'].removesuffix('.zip')
     extract_zip(zip_path, extract_root)
-    fonts = iter_font_files(extract_root, '*.ttf')
+    fonts = iter_font_files(extract_root)
 
     pyftfeatfreeze = ensure_pyftfeatfreeze(args.pyftfeatfreeze, Path(args.tool_venv), args.verbose)
 

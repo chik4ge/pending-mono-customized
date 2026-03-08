@@ -36,6 +36,12 @@ Freeze the bundled `editor-default` preset:
   --preset editor-default
 ```
 
+Build release zip files for all upstream asset variants with one command:
+
+```bash
+./build_release_assets.py --tag v0.0.3 --preset editor-default
+```
+
 Freeze `ss01,zero` into the Nerd Fonts build from `v0.0.3`:
 
 ```bash
@@ -79,9 +85,15 @@ For example:
 dist/v0.0.3/PendingMono_v0.0.3/Zero/
 ```
 
+Release zip files are written under:
+
+```text
+release-assets/<asset>_<tag>_<preset>.zip
+```
+
 ## Notes
 
-- By default the script processes `*.ttf`. Use `--include-pattern '*.otf'` if a future release ships OTF files.
+- By default the script processes upstream TTF files.
 - The bundled preset [presets.json](/home/chikage/dev/pending-mono-customized/presets.json) only keeps enabled OpenType tags under `alternates` and `features`.
 - `pyftfeatfreeze` only supports substitutions it can remap through `cmap` and GSUB. It does not freeze arbitrary layout behavior.
 - The upstream tool recommends changing names appropriately if your redistribution target has naming restrictions.
