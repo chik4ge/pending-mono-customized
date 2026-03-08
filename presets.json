@@ -1,0 +1,24 @@
+{
+  "editor-default": {
+    "alternates": {
+      "cv01": true,
+      "cv02": true,
+      "cv03": false,
+      "cv04": false,
+      "cv05": true,
+      "cv06": true,
+      "cv07": false,
+      "cv08": true,
+      "cv09": false,
+      "cv10": true,
+      "cv11": false
+    },
+    "features": {
+      "ss01": true,
+      "ss02": true,
+      "ss03": true,
+      "ss04": true,
+      "ss05": true
+    }
+  }
+}
